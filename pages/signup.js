@@ -19,8 +19,9 @@ export default function Signup() {
 
         const data = await res.json();
         setUser(data.user); // Set authenticated user
+        router.push("/protected");
       } catch (error) {
-        router.push("/login"); // Redirect to login if not authenticated
+        return error // Redirect to login if not authenticated
       }
     }
 
